@@ -1,0 +1,29 @@
+.error {
+  padding: 2em;
+  width: 80%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error img {
+  width: 50%;
+  height: 80%;
+}
+
+.error h2 {
+  font-size: 3.5em;
+}
+
+.error p {
+  font-size: 1.8em;
+  width: 60%;
+  text-align: center;
+  margin-block: 0.5em;
+}
+
+/* button {
+
+} */

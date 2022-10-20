@@ -1,0 +1,866 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400;600&family=Poppins:wght@400;600&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #ddd;
+  font-family: Josefin Sans;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container .store, .container .news, .container .content, .container .product, .container .community, .container .music, .container .video, .container .dashboard {
+  padding: 2em;
+  width: 80%;
+}
+
+.container {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 25%, rgba(255, 255, 255, 0.5) 75%);
+  width: 100%;
+  height: 100vh;
+  border-radius: 1em;
+  padding: 2em;
+  display: flex;
+}
+.container ul {
+  height: 100%;
+  width: 20%;
+  background: #ccc;
+  padding: 2em 0;
+}
+.container ul li {
+  font-size: 1.8em;
+  padding: 1em 2em;
+  list-style: none;
+}
+.container .dashboard {
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.container .dashboard::-webkit-scrollbar {
+  display: none;
+}
+.container .dashboard .posts {
+  width: 48%;
+  padding: 2em;
+  background: #ccc;
+  font-size: 1.3em;
+}
+.container .dashboard .posts .post-head {
+  display: flex;
+  height: 5em;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.container .dashboard .posts .post-head img {
+  height: 100%;
+  border-radius: 50%;
+}
+.container .dashboard .posts .post-head .user-details h3 {
+  margin-bottom: 0.2em;
+}
+.container .dashboard .dashboard-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+.container .dashboard .new-post {
+  padding: 2em;
+  height: 20em;
+  background: #ddd;
+  width: 48%;
+  border-radius: 2em;
+}
+.container .dashboard .new-post h3 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+.container .dashboard .new-post form {
+  height: 80%;
+  width: 100%;
+}
+.container .dashboard .new-post textarea {
+  width: 100%;
+  height: 75%;
+  outline: none;
+  background: transparent;
+  border: 1px solid black;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  resize: none;
+}
+.container .dashboard .new-post button {
+  background: #2b6cb3;
+  color: white;
+  font-family: Josefin Sans;
+  font-size: 1.2em;
+  padding: 0.7em 1em;
+  border: none;
+  outline: none;
+}
+.container .dashboard .greeting {
+  width: 48%;
+  background: #ddd;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20em;
+  border-radius: 2em;
+}
+.container .dashboard .greeting section {
+  text-align: center;
+}
+.container .dashboard .greeting section h2 {
+  font-size: 2.5em;
+}
+.container .dashboard .greeting section p {
+  font-size: 1.5em;
+  margin: 0.3em 0;
+}
+.container .dashboard .greeting section button {
+  background: #2b6cb3;
+  color: white;
+  font-family: Josefin Sans;
+  font-size: 1.2em;
+  padding: 0.7em 1em;
+  border: none;
+  outline: none;
+}
+.container .dashboard .greeting img {
+  height: 100%;
+}
+.container .dashboard .navBar {
+  display: flex;
+  justify-content: space-between;
+  background: #ddd;
+  height: 5em;
+  margin: 1em 0;
+}
+.container .dashboard .navBar form input {
+  width: 30em;
+  height: 95%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0 1em;
+  border-bottom: 3px solid black;
+}
+.container .dashboard .navBar .user-details {
+  display: flex;
+  align-items: center;
+}
+.container .dashboard .navBar .user-details div {
+  padding: 1em;
+  font-size: 1.3em;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.container .dashboard .navBar .user-details div i {
+  margin-right: 1em;
+}
+.container .dashboard .navBar .user-details div img {
+  height: 100%;
+  width: 2.5em;
+}
+.container .video .video-display {
+  height: 50em;
+  width: 80%;
+  position: relative;
+}
+.container .video .video-display video {
+  width: 100%;
+  height: 100%;
+  margin-block: 2em 1em;
+}
+.container .video .video-display:hover .video-controls {
+  opacity: 1;
+}
+.container .video .video-display .video-controls {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 5em;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 2em;
+  opacity: 0;
+}
+.container .video button {
+  padding: 1em;
+  background: #2b6cb3;
+  color: white;
+  border: none;
+  outline: none;
+  font-family: Josefin Sans;
+  margin-inline: 0.2em;
+}
+.container .music .player-container {
+  display: flex;
+}
+.container .music .player-container .details,
+.container .music .player-container .player {
+  width: 48%;
+  padding: 20px;
+}
+.container .music .player-container .details ._one,
+.container .music .player-container .details ._two {
+  height: 50%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.container .music .player-container .details ._one::-webkit-scrollbar,
+.container .music .player-container .details ._two::-webkit-scrollbar {
+  display: none;
+}
+.container .music .player-container .details h2 {
+  font-size: 18px;
+  margin-block: 10px;
+}
+.container .music .player-container .details ul.list {
+  all: initial;
+}
+.container .music .player-container .details li {
+  padding: 5px;
+  list-style: square;
+  font-size: 12px;
+}
+.container .music .player-container .player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+}
+.container .music .player-container .player .disc {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: 20px;
+  -webkit-animation: playPause 15s 0s infinite normal forwards;
+          animation: playPause 15s 0s infinite normal forwards;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+.container .music .player-container .player .disc .disc-cutter {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ccc;
+}
+.container .music .player-container .player h4 {
+  margin-block: 10px;
+}
+.container .music .player-container .player input {
+  width: 90%;
+}
+.container .music .player-container .player .controls {
+  margin-top: 10px;
+}
+.container .music .player-container .player .controls i {
+  font-size: 30px;
+  margin-inline: 10px;
+}
+.container .community {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .community .modal {
+  background: #2b6cb3;
+  color: white;
+  padding: 0 2em;
+  margin-block: 2em 1em;
+  width: 40em;
+}
+.container .community h1 {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+}
+.container .community .form-switch {
+  width: 35em;
+  background: #ccc;
+  border-radius: 5em;
+  padding: 0.5em;
+  height: 5em;
+}
+.container .community .form-switch button {
+  width: 50%;
+  height: 100%;
+  background: #2b6cb3;
+  color: white;
+  border-radius: 5em;
+  border: none;
+  outline: none;
+}
+.container .community .form-switch button.signup-btn {
+  background: rgb(255, 253, 253);
+  color: #2b6cb3;
+}
+.container .community h2 {
+  font-size: 1.8em;
+  margin-block: 1em;
+}
+.container .community form .register {
+  flex-direction: row-reverse;
+}
+.container .community form .login,
+.container .community form .register {
+  width: 40em;
+  height: 4em;
+  background: #ddd;
+  margin-block: 1em;
+  display: flex;
+}
+.container .community form .login input,
+.container .community form .register input {
+  width: 85%;
+  height: 100%;
+  background: transparent;
+  padding-left: 1em;
+  border: none;
+  outline: none;
+  color: black;
+}
+.container .community form .login i,
+.container .community form .register i {
+  right: 0;
+  background: #2b6cb3;
+  color: white;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15%;
+  height: 100%;
+}
+.container .community form button {
+  padding: 1em 3em;
+  color: white;
+  border: none;
+  outline: none;
+  background: #2b6cb3;
+  font-family: Josefin Sans;
+}
+.container .product {
+  height: 100vh;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.container .product::-webkit-scrollbar {
+  display: none;
+}
+.container .product button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 0 1.5em 0 1.5em;
+  outline: none;
+  font-size: 1.3em;
+  background: #2b6cb3;
+  color: white;
+}
+.container .product button:hover {
+  background: white;
+  color: #2b6cb3;
+}
+.container .product .item {
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+}
+.container .product .item .prod-images,
+.container .product .item .product-data {
+  width: 50%;
+}
+.container .product .item .product-data {
+  padding: 6em 3em;
+}
+.container .product .item .product-data h2 {
+  font-size: 2em;
+}
+.container .product .item .product-data p {
+  font-size: 1.6em;
+  margin-block: 2em;
+}
+.container .product .item .product-data h3 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+.container .product .item .product-data button {
+  padding: 1em 2em;
+  border: none;
+  outline: none;
+  font-size: 1.3em;
+  background: #2b6cb3;
+  color: white;
+}
+.container .product .item .prod-images .thumbnail {
+  width: 100%;
+}
+.container .product .item .prod-images .thumbnail img {
+  width: 100%;
+  border-radius: 2em;
+  height: 40em;
+}
+.container .product .item .prod-images .more-image {
+  width: 100%;
+  display: flex;
+  gap: 2em;
+  margin-top: 2em;
+}
+.container .product .item .prod-images .more-image img {
+  width: 20%;
+}
+.container .content {
+  font-family: Poppins;
+  overflow: scroll;
+  background: white;
+  scrollbar-width: none;
+}
+.container .content::-webkit-scrollbar {
+  display: none;
+}
+.container .content nav {
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2);
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.container .content .banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 40em;
+}
+.container .content .banner .hero,
+.container .content .banner img {
+  width: 45%;
+}
+.container .content .banner .hero {
+  display: unset;
+}
+.container .content .banner .hero h1 {
+  font-size: 3.5em;
+}
+.container .content .banner .hero p {
+  font-size: 1.5em;
+  margin-block: 1em 2em;
+}
+.container .content .features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .content .features h2 {
+  font-size: 2.3em;
+}
+.container .content .features p {
+  font-size: 1.3em;
+  width: 60%;
+  text-align: center;
+  margin-block: 0.7em 1.2em;
+}
+.container .content .features .featurelists {
+  display: flex;
+  gap: 1.5em;
+}
+.container .content .features .featurelists .feature {
+  width: 20%;
+  position: relative;
+}
+.container .content .features .featurelists .feature img {
+  width: 100%;
+  height: 100%;
+}
+.container .content .features .featurelists .feature div {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 0.5s ease-in linear;
+}
+.container .content .features .featurelists .feature:hover div {
+  opacity: 1;
+}
+.container .content .why-us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-block: 3em;
+}
+.container .content .why-us h3 {
+  font-size: 2.3em;
+}
+.container .content .why-us p {
+  font-size: 1.5em;
+  margin-block: 0.7em 1.5em;
+  width: 60%;
+  text-align: center;
+}
+.container .content .why-us div {
+  display: flex;
+  justify-content: space-around;
+}
+.container .content .why-us div img,
+.container .content .why-us div .reasons {
+  width: 45%;
+}
+.container .content .why-us div .reasons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.container .content .why-us div .reasons li {
+  all: unset;
+  list-style: disc;
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+.container .content footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+  padding-top: 1em;
+}
+.container .content footer h4 {
+  font-size: 1.6em;
+}
+.container .content footer ol {
+  list-style-type: disc;
+}
+.container .content footer ol li {
+  font-size: 1.3em;
+  margin-block: 0.5em;
+}
+.container .content footer ol li:hover {
+  color: #2b6cb3;
+  background: unset;
+}
+.container .content footer div p {
+  font-size: 1.2em;
+  font-style: italic;
+}
+.container .news {
+  overflow: scroll;
+  scrollbar-width: none;
+  position: relative;
+}
+.container .news::-webkit-scrollbar {
+  display: none;
+}
+.container .news .pre-loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.container .news .pre-loader img {
+  width: 8em;
+  height: 8em;
+  -webkit-animation: loading 2s 0s infinite linear;
+          animation: loading 2s 0s infinite linear;
+}
+.container .news h1 {
+  margin-bottom: 1em;
+}
+.container .news .news-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+.container .news .news-items div {
+  width: 30%;
+  background: white;
+  font-size: 1.2em;
+}
+.container .news .news-items div div {
+  width: 100%;
+  padding: 2em 1em;
+}
+.container .news .news-items div div p.author {
+  margin: 0.5em 0 0 0;
+  font-style: italic;
+  color: rgb(105, 101, 101);
+  line-clamp: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.container .news .news-items div div p {
+  margin-block: 1em 1.5em;
+  line-height: 1.3;
+}
+.container .news .news-items div div a {
+  padding: 1em 3em;
+  background: #2b6cb3;
+  border: none;
+  color: white;
+  text-decoration: none;
+}
+.container .news .news-items div img {
+  width: 100%;
+  height: 20em;
+}
+.container .store {
+  height: 100%;
+  width: 80%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+.container .store .showcart {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.container .store .showcart i {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  font-size: 4em;
+  color: white;
+}
+.container .store .showcart .cartList {
+  background: white;
+  padding: 2em;
+  height: 50em;
+  width: 80em;
+  border-radius: 0.5em;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.container .store .showcart .cartList h2 {
+  padding: 0.5em 1em;
+  font-size: 2em;
+  border-bottom: 3px solid #2b6cb3;
+}
+.container .store .showcart .cartList .cart-item {
+  height: 15em;
+  margin-top: 1em;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #2b6cb3;
+}
+.container .store .showcart .cartList .cart-item img {
+  width: 40%;
+  height: 100%;
+}
+.container .store .showcart .cartList .cart-details {
+  padding: 1em;
+}
+.container .store .showcart .cartList .cart-details h3 {
+  font-size: 1.8em;
+}
+.container .store .showcart .cartList .cart-details h4 {
+  font-size: 1.6em;
+  margin-block: 0.5em;
+}
+.container .store .showcart .cartList .cart-details button {
+  padding: 1em 2em;
+  font-size: 1.1em;
+  color: white;
+  background: #2b6cb3;
+  border-radius: 0 5em 0 5em;
+  border: none;
+  font-family: inherit;
+}
+.container .store .showcart .cartList .subtotal {
+  padding: 1em 1em 0;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  border-top: 3px solid #2b6cb3;
+  margin-top: 0.5em;
+}
+.container .store .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .store .header i {
+  font-size: 2em;
+}
+.container .store .items {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+.container .store .items div {
+  width: 30%;
+  background: rgba(255, 255, 255, 0.8);
+}
+.container .store .items div img {
+  width: 100%;
+  height: 18em;
+}
+.container .store .items div div {
+  width: 100%;
+  padding: 1em;
+}
+.container .store .items div div p {
+  margin: 0.5em 0;
+  font-size: 1.1em;
+}
+.container .store .items div div .price {
+  font-size: 1.2em;
+  color: red;
+}
+.container .store .items div div button {
+  padding: 0.7em 1em;
+  border: none;
+  outline: none;
+  background: green;
+  color: white;
+  font-family: Josefin Sans;
+}
+.container .store h1 {
+  letter-spacing: 0.3em;
+  font-size: 2em;
+  margin-bottom: 1em;
+  position: static;
+}
+
+li:hover, .active li {
+  background: #2b6cb3;
+  color: white;
+}
+
+.store::-webkit-scrollbar {
+  display: none;
+}
+
+@-webkit-keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(350deg);
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(350deg);
+  }
+}
+@-webkit-keyframes playPause {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes playPause {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 480px) {
+  .content {
+    width: 90%;
+    padding: 10px;
+  }
+  .content nav {
+    flex-direction: column;
+  }
+  .content .banner {
+    flex-direction: column-reverse;
+    width: 100%;
+    gap: 10px;
+    height: unset;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: unset;
+    border: 2px solid red;
+  }
+  .content .banner .hero, .content .banner img {
+    width: unset;
+    border: 2px solid red;
+  }
+  .content .banner .hero h1 {
+    font-size: 2em;
+  }
+  .content .banner .hero p {
+    font-size: 1.5em;
+    margin-block: 1em 2em;
+  }
+  .content .features .featurelists {
+    flex-wrap: wrap;
+  }
+  .content .features .featurelists .feature {
+    width: 40vw;
+    border: 2px solid red;
+  }
+  .content .features .featurelists .feature img {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
