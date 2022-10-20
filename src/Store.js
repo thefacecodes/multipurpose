@@ -38,24 +38,42 @@ function Store({ children }) {
     if (action.type === "ADD") {
       console.log(state);
       const newBasket = [...state.basket, action.payload];
+      const prices = newBasket.map(item => item.price)
+      console.log(prices);
 
       return {
         ...state,
         basket: newBasket,
-        totalAmount: state.totalAmount + action.payload.price,
+        
+        totalAmount: prices.reduce((item, price) => (item + price), 0),
       };
     }
 
     if (action.type === "REMOVE") {
       console.log(state);
-      console.log(action.payload);
+      const newBasket = state.basket.filter(item => item.id !== action.payload.id);
+      console.log("New Price", newBasket.reduce((item, price) => (item.price + price), 0));
+      const prices = newBasket.map(item => item.price)
+      console.log(prices);
+      
+  
       return {
         ...state,
-        basket: state.basket.filter((item) => item.id !== action.payload.id),
-        totalAmount: state.totalAmount - action.payload.price,
-        // totalAmount: ,
+        basket: newBasket,
+        totalAmount: prices.reduce((item, amount) => (item + amount), 0)
       };
     }
+
+    // if (action.type === "REMOVE") {
+    //   console.log(state);
+    //   console.log(action.payload);
+    //   return {
+    //     ...state,
+    //     basket: state.basket.filter((item) => item.id !== action.payload.id),
+    //     totalAmount: state.basket.reduce((item, price) => (item.price + price), 0),
+    //     // totalAmount: ,
+    //   };
+    // }
   };
 
   // if (items) {
