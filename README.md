@@ -1,4 +1,4 @@
-# Softstore
+# The Face Multipurpose App
 
 ### Screenshot
 
